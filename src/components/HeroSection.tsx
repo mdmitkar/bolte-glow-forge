@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import heroSneaker from "@/assets/hero-sneaker.png";
-import Hero3DScene from "./Hero3DScene";
 
-const particles = Array.from({ length: 25 }, (_, i) => ({
+const particles = Array.from({ length: 35 }, (_, i) => ({
   id: i,
   x: Math.random() * 100,
   y: Math.random() * 100,
@@ -10,7 +9,6 @@ const particles = Array.from({ length: 25 }, (_, i) => ({
   delay: Math.random() * 4,
 }));
 
-// Stagger letter animation
 const letterVariants = {
   hidden: { opacity: 0, y: 80, rotateX: -90 },
   visible: (i: number) => ({
@@ -27,12 +25,32 @@ const headline2 = "Style.".split("");
 const HeroSection = () => {
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-20">
-      {/* 3D Background Scene */}
-      <Hero3DScene />
+      {/* Animated gradient orbs */}
+      <div className="absolute inset-0">
+        <motion.div
+          animate={{ scale: [1, 1.3, 1], x: [0, 50, 0], y: [0, -30, 0] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute left-[20%] top-[20%] h-[500px] w-[500px] rounded-full bg-primary/8 blur-[120px]"
+        />
+        <motion.div
+          animate={{ scale: [1.2, 1, 1.2], x: [0, -40, 0], y: [0, 40, 0] }}
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute right-[10%] bottom-[20%] h-[400px] w-[400px] rounded-full bg-accent/6 blur-[100px]"
+        />
+        <motion.div
+          animate={{ scale: [1, 1.5, 1], rotate: [0, 180, 360] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          className="absolute left-[50%] top-[40%] h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/12 blur-[80px]"
+        />
+      </div>
 
-      {/* Background glow */}
-      <div className="absolute inset-0 gradient-hero" />
-      <div className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/10 blur-[120px]" />
+      {/* Animated grid lines */}
+      <div className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: `linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)`,
+          backgroundSize: '60px 60px',
+        }}
+      />
 
       {/* Particles */}
       {particles.map((p) => (
@@ -44,6 +62,18 @@ const HeroSection = () => {
           transition={{ duration: 4, delay: p.delay, repeat: Infinity, ease: "easeInOut" }}
         />
       ))}
+
+      {/* Floating rings */}
+      <motion.div
+        animate={{ rotate: 360 }}
+        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+        className="absolute left-[50%] top-[50%] h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary/10"
+      />
+      <motion.div
+        animate={{ rotate: -360 }}
+        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+        className="absolute left-[50%] top-[50%] h-[450px] w-[450px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/10"
+      />
 
       <div className="container relative z-10 mx-auto grid items-center gap-8 px-6 lg:grid-cols-2">
         {/* Text */}
@@ -57,7 +87,6 @@ const HeroSection = () => {
             Premium Footwear
           </motion.p>
 
-          {/* Animated headline - letter by letter */}
           <h1 className="font-display text-6xl font-bold leading-none text-foreground md:text-8xl lg:text-9xl">
             <span className="inline-block">
               {headline1.map((char, i) => (
@@ -124,7 +153,7 @@ const HeroSection = () => {
           </motion.div>
         </div>
 
-        {/* Sneaker with enhanced animation */}
+        {/* Sneaker */}
         <motion.div
           initial={{ opacity: 0, scale: 0.5, rotate: -20 }}
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
@@ -132,13 +161,19 @@ const HeroSection = () => {
           className="relative flex items-center justify-center"
         >
           <div className="absolute h-80 w-80 rounded-full bg-primary/20 blur-[80px]" />
+          {/* Rotating dashed circle */}
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            className="absolute h-[420px] w-[420px] rounded-full border-2 border-dashed border-primary/20"
+          />
           <motion.div
             animate={{ rotate: [0, 5, -5, 0] }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           >
             <motion.img
               src={heroSneaker}
-              alt="Premium sneaker"
+              alt="Premium sneaker from No.01 Shoes Bolte"
               className="sneaker-float relative z-10 w-full max-w-lg drop-shadow-[0_20px_60px_rgba(255,107,0,0.4)]"
               whileHover={{ rotate: 15, scale: 1.1 }}
               transition={{ type: "spring", stiffness: 200 }}
