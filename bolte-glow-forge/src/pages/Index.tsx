@@ -1,5 +1,3 @@
-import ScrollProgress from "@/components/ScrollProgress";
-import CursorFollower from "@/components/CursorFollower";
 import ScrollChapterDots from "@/components/ScrollChapterDots";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
@@ -27,16 +25,15 @@ import FAQ from "@/components/FAQ";
 import Newsletter from "@/components/Newsletter";
 import InstagramGallery from "@/components/InstagramGallery";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import SectionDivider from "@/components/SectionDivider";
+
+import PageTransition from "@/components/PageTransition";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <ScrollProgress />
-      <CursorFollower />
+    <PageTransition>
+      <div className="min-h-screen bg-background">
       <ScrollChapterDots />
-      <WhatsAppButton />
       <Navbar />
       <HeroSection />
       <MarqueeBanner />
@@ -69,6 +66,7 @@ const Index = () => {
       <InstagramGallery />
       <Footer />
     </div>
+    </PageTransition>
   );
 };
 

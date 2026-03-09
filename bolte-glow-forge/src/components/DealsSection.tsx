@@ -1,7 +1,10 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
-import { Zap, Clock, ArrowRight } from "lucide-react";
-import sneaker5 from "@/assets/sneaker-5.png";
+import { Zap, Clock, ArrowRight, ShoppingBag } from "lucide-react";
+import { useCart } from "@/lib/CartContext";
+import { toast } from "sonner";
+import { products } from "@/data/products";
+import { useNavigate } from "react-router-dom";
 
 function CountdownTimer() {
   const [time, setTime] = useState({ hours: 23, minutes: 47, seconds: 12 });
@@ -46,20 +49,27 @@ function CountdownTimer() {
 
 const DealsSection = () => {
   const ref = useRef(null);
+  const { addToCart } = useCart();
+  const navigate = useNavigate();
+  const dealProduct = products.find(p => p.id === "daily-flex-max") || products[0];
+
+  const handleAddToCart = () => {
+    addToCart({
+      id: dealProduct.id,
+      name: dealProduct.name,
+      price: dealProduct.price,
+      image: dealProduct.image,
+      quantity: 1,
+      size: dealProduct.sizes[0]
+    });
+    toast.success(`${dealProduct.name} added to cart!`, {
+      description: `Standard size ${dealProduct.sizes[0]} added.`,
+      icon: <ShoppingBag className="h-4 w-4 text-primary" />,
+    });
+  };
 
   return (
     <section id="deals" ref={ref} className="section-padding relative overflow-hidden">
-      {/* Diagonal stripe accent */}
-      <div className="absolute inset-0 opacity-[0.015]">
-        {[...Array(12)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute h-[200%] w-16 -rotate-12 bg-primary"
-            style={{ left: `${i * 10}%`, top: "-50%" }}
-          />
-        ))}
-      </div>
-
       <div className="container relative z-10 mx-auto px-6">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           {/* Left */}
@@ -89,6 +99,7 @@ const DealsSection = () => {
             <CountdownTimer />
 
             <motion.button
+              onClick={() => navigate("/shop")}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               className="mt-10 inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 font-display text-sm font-semibold uppercase tracking-wider text-primary-foreground hover:glow-box"
@@ -97,7 +108,7 @@ const DealsSection = () => {
             </motion.button>
           </motion.div>
 
-          {/* Right - Deal card */}
+          {/* Right - Deal card connected */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -109,10 +120,13 @@ const DealsSection = () => {
                 <span className="font-display text-sm font-bold text-destructive-foreground">-60%</span>
               </div>
 
-              <div className="p-8 sm:p-10">
+              <div 
+                className="p-8 sm:p-10 cursor-pointer"
+                onClick={() => navigate(`/product/${dealProduct.id}`)}
+              >
                 <motion.img
-                  src={sneaker5}
-                  alt="Deal sneaker"
+                  src={dealProduct.image}
+                  alt={dealProduct.name}
                   className="mx-auto h-52 w-52 object-contain sm:h-64 sm:w-64"
                   animate={{ y: [0, -10, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -120,10 +134,10 @@ const DealsSection = () => {
               </div>
 
               <div className="border-t border-border p-6 sm:p-8">
-                <h3 className="font-display text-2xl font-bold text-foreground">Daily Flex Max</h3>
+                <h3 className="font-display text-2xl font-bold text-foreground">{dealProduct.name}</h3>
                 <div className="mt-2 flex items-center gap-3">
-                  <span className="font-display text-3xl font-bold text-primary">₹799</span>
-                  <span className="text-lg text-muted-foreground line-through">₹1,999</span>
+                  <span className="font-display text-3xl font-bold text-primary">₹{dealProduct.price.toLocaleString()}</span>
+                  <span className="text-lg text-muted-foreground line-through">₹{dealProduct.originalPrice.toLocaleString()}</span>
                 </div>
 
                 <div className="mt-5">
@@ -143,6 +157,7 @@ const DealsSection = () => {
                 </div>
 
                 <motion.button
+                  onClick={handleAddToCart}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="mt-6 w-full rounded-xl bg-primary py-3.5 font-display text-sm font-bold uppercase tracking-wider text-primary-foreground hover:glow-box-subtle"

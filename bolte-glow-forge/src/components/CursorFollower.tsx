@@ -1,19 +1,20 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 
 const CursorFollower = () => {
   const [pos, setPos] = useState({ x: 0, y: 0 });
   const [hovering, setHovering] = useState(false);
-  const [trail, setTrail] = useState<{ x: number; y: number; id: number }[]>([]);
+  const [trail, setTrail] = useState<{ x: number; y: number; id: string }[]>([]);
+  const idRef = useRef(0);
 
   useEffect(() => {
-    let id = 0;
     const move = (e: MouseEvent) => {
       setPos({ x: e.clientX, y: e.clientY });
 
-      // Add trail particle
-      id++;
-      setTrail((prev) => [...prev.slice(-8), { x: e.clientX, y: e.clientY, id }]);
+      // Add trail particle with unique ID
+      idRef.current++;
+      const newId = `${Date.now()}-${idRef.current}`;
+      setTrail((prev) => [...prev.slice(-8), { x: e.clientX, y: e.clientY, id: newId }]);
 
       // Check if hovering on interactive element
       const target = e.target as HTMLElement;

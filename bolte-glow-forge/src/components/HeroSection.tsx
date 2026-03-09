@@ -1,9 +1,11 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { ArrowDown, Sparkles } from "lucide-react";
 import heroSneaker from "@/assets/hero-sneaker.png";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const sneakerY = useTransform(scrollYProgress, [0, 1], [0, 150]);
@@ -28,10 +30,10 @@ const HeroSection = () => {
       />
 
       <motion.div style={{ opacity }} className="relative z-10 flex min-h-screen items-center pt-20">
-        <div className="container mx-auto px-6">
-          <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-16">
+        <div className="container relative mx-auto px-6">
+          <div className="grid relative items-center gap-8 lg:grid-cols-2 lg:gap-16">
             {/* Text */}
-            <motion.div style={{ y: textY }} className="text-center lg:text-left">
+            <motion.div style={{ y: textY }} className="relative text-center lg:text-left">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -69,22 +71,25 @@ const HeroSection = () => {
                 transition={{ duration: 0.6, delay: 1 }}
                 className="mt-10 flex flex-wrap justify-center gap-4 lg:justify-start"
               >
-                <motion.a
-                  href="#collection"
+                <motion.button
+                  onClick={() => navigate("/shop")}
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                   className="magnetic-btn rounded-full bg-primary px-8 py-4 font-display text-sm font-semibold uppercase tracking-wider text-primary-foreground hover:glow-box"
                 >
                   Shop Collection
-                </motion.a>
-                <motion.a
-                  href="#store"
+                </motion.button>
+                <motion.button
+                  onClick={() => {
+                    const el = document.getElementById("store-location");
+                    if (el) el.scrollIntoView({ behavior: "smooth" });
+                  }}
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                   className="magnetic-btn rounded-full border border-border px-8 py-4 font-display text-sm font-semibold uppercase tracking-wider text-foreground transition-all hover:border-primary/50 hover:text-primary"
                 >
                   Visit Store
-                </motion.a>
+                </motion.button>
               </motion.div>
 
               {/* Trust badges */}
@@ -94,8 +99,8 @@ const HeroSection = () => {
                 transition={{ delay: 1.3 }}
                 className="mt-10 flex flex-wrap items-center justify-center gap-6 lg:justify-start"
               >
-                {["500+ Happy Customers", "100% Genuine", "Free Delivery"].map((badge) => (
-                  <span key={badge} className="flex items-center gap-2 font-body text-xs text-muted-foreground">
+                {["Trusted in Bhiwandi", "100% Genuine Brands", "Free Local Delivery"].map((badge) => (
+                  <span key={badge} className="flex items-center gap-2 font-body text-[10px] font-bold uppercase tracking-widest text-muted-foreground/60">
                     <span className="h-1 w-1 rounded-full bg-primary" />
                     {badge}
                   </span>
