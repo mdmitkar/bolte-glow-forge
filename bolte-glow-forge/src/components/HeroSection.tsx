@@ -128,7 +128,7 @@ const HeroSection = () => {
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.95, ease: "easeOut" }}
-                  className="mx-auto mt-6 max-w-lg font-body text-base leading-relaxed text-muted-foreground lg:mx-0 lg:text-lg"
+                  className="mx-auto mt-6 max-w-lg font-body text-base font-medium leading-relaxed text-foreground/90 drop-shadow-sm lg:mx-0 lg:text-lg lg:text-muted-foreground lg:drop-shadow-none"
                 >
                   Premium footwear collection curated by Dyna Shoes.
                   Where street culture meets everyday comfort.
