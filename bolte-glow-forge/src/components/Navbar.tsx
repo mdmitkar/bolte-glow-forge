@@ -4,7 +4,7 @@ import { Menu, X, Phone, ShoppingBag, Search } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { useCart } from "@/lib/CartContext";
 import { toast } from "sonner";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,6 +16,7 @@ const Navbar = () => {
   const { scrollY } = useScroll();
   const { cart, totalItems, totalPrice, removeFromCart, updateQuantity } = useCart();
   const navigate = useNavigate();
+  const location = useLocation();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const prev = scrollY.getPrevious() ?? 0;
@@ -51,34 +52,34 @@ const Navbar = () => {
               transition={{ type: "spring", stiffness: 300 }}
             />
             <div className="flex flex-col">
-              <span className="font-display text-base font-bold tracking-wider text-foreground leading-none">
-                DYNA
-              </span>
-              <span className="font-display text-sm font-bold text-primary tracking-widest mt-0.5">
-                SHOES
-              </span>
             </div>
           </Link>
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-10">
-            {["Collection", "Store", "Deals", "About"].map((item) => (
-              <button
-                key={item}
-                onClick={() => {
-                  if (item === "Collection" || item === "Store") navigate("/shop");
-                  else {
-                    const el = document.getElementById(item.toLowerCase());
-                    if (el) el.scrollIntoView({ behavior: "smooth" });
-                    else navigate("/"); // Fallback to home if not on home page
-                  }
-                }}
-                className="font-display text-[11px] uppercase tracking-[0.2em] font-bold text-muted-foreground hover:text-primary transition-all relative group"
-              >
-                {item}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
-              </button>
-            ))}
+            {["Collection", "Store", "Deals", "About"].map((item) => {
+              const isActive = 
+                (item === "Collection" && location.pathname === "/shop") ||
+                (item === "Store" && location.pathname === "/store") ||
+                (item === "Deals" && location.pathname === "/deals") ||
+                (item === "About" && location.pathname === "/about");
+
+              return (
+                <button
+                  key={item}
+                  onClick={() => {
+                    if (item === "Collection") navigate("/shop");
+                    else if (item === "Store") navigate("/store");
+                    else if (item === "Deals") navigate("/deals");
+                    else if (item === "About") navigate("/about");
+                  }}
+                  className={`font-display text-[11px] uppercase tracking-[0.2em] font-bold transition-all relative group ${isActive ? "text-primary" : "text-muted-foreground hover:text-primary"}`}
+                >
+                  {item}
+                  <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${isActive ? "w-full" : "w-0 group-hover:w-full"}`} />
+                </button>
+              );
+            })}
           </div>
 
           <div className="hidden items-center gap-4 lg:flex">
@@ -209,28 +210,35 @@ const Navbar = () => {
               </form>
 
               <div className="flex flex-col gap-2">
-                {["Home", "Collection", "Store", "Deals", "About"].map((item, i) => (
-                  <motion.button
-                    key={item}
-                    onClick={() => {
-                      setIsOpen(false);
-                      if (item === "Home") navigate("/");
-                      else if (item === "Collection" || item === "Store") navigate("/shop");
-                      else {
-                        const el = document.getElementById(item.toLowerCase());
-                        if (el) el.scrollIntoView({ behavior: "smooth" });
-                        else navigate("/");
-                      }
-                    }}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.05 + 0.1 }}
-                    className="border-b border-border/50 py-5 font-display text-3xl font-bold text-foreground transition-all hover:text-primary hover:pl-2 text-left flex items-center justify-between group"
-                  >
-                    {item}
-                    <ArrowRight size={20} className="text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </motion.button>
-                ))}
+                {["Home", "Collection", "Store", "Deals", "About"].map((item, i) => {
+                  const isActive = 
+                    (item === "Home" && location.pathname === "/") ||
+                    (item === "Collection" && location.pathname === "/shop") ||
+                    (item === "Store" && location.pathname === "/store") ||
+                    (item === "Deals" && location.pathname === "/deals") ||
+                    (item === "About" && location.pathname === "/about");
+
+                  return (
+                    <motion.button
+                      key={item}
+                      onClick={() => {
+                        setIsOpen(false);
+                        if (item === "Home") navigate("/");
+                        else if (item === "Collection") navigate("/shop");
+                        else if (item === "Store") navigate("/store");
+                        else if (item === "Deals") navigate("/deals");
+                        else if (item === "About") navigate("/about");
+                      }}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.05 + 0.1 }}
+                      className={`border-b border-border/50 py-5 font-display text-3xl font-bold transition-all hover:pl-2 text-left flex items-center justify-between group ${isActive ? "text-primary" : "text-foreground hover:text-primary"}`}
+                    >
+                      {item}
+                      <ArrowRight size={20} className={`${isActive ? "text-primary opacity-100" : "text-primary opacity-0 group-hover:opacity-100"} transition-opacity`} />
+                    </motion.button>
+                  );
+                })}
               </div>
 
               <motion.div

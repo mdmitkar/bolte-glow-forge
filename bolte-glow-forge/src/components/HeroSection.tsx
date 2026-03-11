@@ -94,7 +94,7 @@ const HeroSection = () => {
         />
 
         {/* Content layer */}
-        <div className="relative z-10 flex h-full items-center pt-20">
+        <div className="relative z-10 flex h-full items-center pt-32 pb-10">
           <div className="container mx-auto px-6">
             <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-16">
 

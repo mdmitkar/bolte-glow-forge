@@ -8,6 +8,9 @@ import Shop from "./pages/Shop";
 import ProductDetail from "./pages/ProductDetail";
 import Checkout from "./pages/Checkout";
 import NotFound from "./pages/NotFound";
+import About from "./pages/About";
+import Deals from "./pages/Deals";
+import Store from "./pages/Store";
 import ScrollToTop from "./components/ScrollToTop";
 import { AnimatePresence } from "framer-motion";
 
@@ -26,6 +29,9 @@ const AnimatedRoutes = () => {
         <Route path="/shop" element={<Shop />} />
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/deals" element={<Deals />} />
+        <Route path="/store" element={<Store />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>
