@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-const items = ["FREE DELIVERY", "•", "PREMIUM QUALITY", "•", "BEST PRICES", "•", "STREETWEAR", "•", "100% GENUINE", "•", "NO.01 SHOES BOLTE", "•"];
+const items = ["FREE DELIVERY", "•", "PREMIUM QUALITY", "•", "BEST PRICES", "•", "STREETWEAR", "•", "100% GENUINE", "•", "DYNA SHOES", "•"];
 
 const MarqueeBanner = () => {
   const ref = useRef(null);

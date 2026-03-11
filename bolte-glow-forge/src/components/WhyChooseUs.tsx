@@ -4,10 +4,10 @@ import { Truck, Shield, Headphones, CreditCard, RefreshCw, Award } from "lucide-
 const features = [
   { icon: Truck, title: "Free Delivery", desc: "Free shipping on orders above ₹999" },
   { icon: Shield, title: "Quality Assured", desc: "100% genuine products guaranteed" },
-  { icon: Headphones, title: "24/7 Support", desc: "Call Chirag anytime for assistance" },
+  { icon: Headphones, title: "24/7 Support", desc: "Call us anytime for assistance" },
   { icon: CreditCard, title: "Easy Payments", desc: "Cash, UPI, and card accepted" },
   { icon: RefreshCw, title: "Easy Returns", desc: "7-day hassle-free return policy" },
-  { icon: Award, title: "Best Prices", desc: "Unbeatable prices in Bhiwandi" },
+  { icon: Award, title: "Best Prices", desc: "Unbeatable prices in Camp Pune" },
 ];
 
 const WhyChooseUs = () => {
@@ -22,7 +22,7 @@ const WhyChooseUs = () => {
         >
           <p className="mb-3 font-body text-[11px] uppercase tracking-[0.3em] text-primary">Why Us</p>
           <h2 className="font-display text-4xl font-bold text-foreground md:text-6xl lg:text-7xl">
-            Why Choose <span className="text-gradient">Bolte</span>
+            Why Choose <span className="text-gradient">Dyna Shoes</span>
           </h2>
         </motion.div>
 

@@ -188,7 +188,7 @@ const ProductDetail = () => {
             </ul>
             <div className="rounded-2xl border border-border bg-background p-6">
               <p className="text-sm leading-relaxed text-muted-foreground italic">
-                "Curated for those who don't just walk, but make an impression. Every pair at Bolte is picked with focus on durability and street readiness." — Chirag
+                "Curated for those who don't just walk, but make an impression. Every pair at Dyna Shoes is picked with focus on durability and street readiness."
               </p>
             </div>
           </div>

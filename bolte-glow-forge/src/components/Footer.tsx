@@ -10,7 +10,7 @@ const Footer = () => {
             <div className="flex items-center gap-3">
               <img src={logo} alt="Logo" className="h-16 w-16" />
               <span className="font-display text-base font-bold text-foreground">
-                NO.1 SHOES <span className="text-primary">BOLTE</span>
+                DYNA <span className="text-primary">SHOES</span>
               </span>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
@@ -46,14 +46,14 @@ const Footer = () => {
           <div>
             <h4 className="font-display text-xs font-semibold uppercase tracking-wider text-foreground">Connect</h4>
             <div className="mt-4 flex flex-col gap-2.5">
-              <a href="tel:7558764648" className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary">
-                <Phone size={13} /> +91 7558764648
+              <a href="tel:9607281858" className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary">
+                <Phone size={13} /> +91 9607281858
               </a>
-              <a href="https://instagram.com/No_1_shoes_bolte" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary">
-                <Instagram size={13} /> @No_1_shoes_bolte
+              <a href="https://www.instagram.com/dynashoes.camp/" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary">
+                <Instagram size={13} /> @dynashoes.camp
               </a>
               <p className="flex items-start gap-2 text-sm text-muted-foreground">
-                <MapPin size={13} className="mt-0.5 shrink-0" /> Bhiwandi, Thane 421302
+                <MapPin size={13} className="mt-0.5 shrink-0" /> Kolsa Street Camp Pune
               </p>
             </div>
           </div>
@@ -61,7 +61,7 @@ const Footer = () => {
 
         <div className="mt-12 flex flex-col items-center gap-2 border-t border-border pt-8">
           <p className="text-xs text-muted-foreground">
-            © 2026 No.01 Shoes Bolte. All rights reserved.
+            © 2026 Dyna Shoes. All rights reserved.
           </p>
         </div>
       </div>

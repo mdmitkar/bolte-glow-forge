@@ -60,7 +60,7 @@ const Checkout = () => {
             </div>
             <h1 className="mt-8 font-display text-4xl font-bold md:text-5xl">Thank You for Your Order!</h1>
             <p className="mt-4 max-w-md text-muted-foreground">
-              Your order has been confirmed. We'll notify you once your fresh kicks are on the way. Order ID: #BOLTE-{Math.floor(Math.random() * 10000)}
+              Your order has been confirmed. We'll notify you once your fresh kicks are on the way. Order ID: #DYNA-{Math.floor(Math.random() * 10000)}
             </p>
             <button 
               onClick={() => navigate("/")}
@@ -126,7 +126,7 @@ const Checkout = () => {
                       <div className="grid gap-6 md:grid-cols-3">
                         <div className="space-y-2">
                           <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground ml-1">City</label>
-                          <input required className="w-full rounded-2xl border border-border bg-background p-4 text-sm focus:border-primary/50 outline-none transition-all" placeholder="Bhiwandi" />
+                          <input required className="w-full rounded-2xl border border-border bg-background p-4 text-sm focus:border-primary/50 outline-none transition-all" placeholder="Pune" />
                         </div>
                         <div className="space-y-2">
                           <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground ml-1">State</label>
@@ -161,7 +161,7 @@ const Checkout = () => {
                     <div className="mt-6 flex items-start gap-3 p-4 bg-muted/50 rounded-2xl border border-border/50">
                       <div className="w-2 h-2 rounded-full bg-primary mt-1.5 shrink-0" />
                       <p className="text-[11px] leading-relaxed text-muted-foreground italic">
-                        Currently only accepting COD in Bhiwandi and nearby areas to ensure high-speed processing and no-hassle delivery.
+                        Currently only accepting COD in Pune and nearby areas to ensure high-speed processing and no-hassle delivery.
                       </p>
                     </div>
                   </section>

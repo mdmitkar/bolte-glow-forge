@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
 
 const testimonials = [
-  { name: "Rahul S.", text: "Best sneaker shop in Bhiwandi! The quality is unreal for the price. I've bought 5 pairs already.", rating: 5, tag: "Verified Buyer" },
-  { name: "Priya M.", text: "My go-to place for trendy shoes. Chirag always helps me find the perfect pair. Highly recommended!", rating: 5, tag: "Regular Customer" },
+  { name: "Rahul S.", text: "Best sneaker shop in Camp Pune! The quality is unreal for the price. I've bought 5 pairs already.", rating: 5, tag: "Verified Buyer" },
+  { name: "Priya M.", text: "My go-to place for trendy shoes. Dyna Shoes always helps me find the perfect pair. Highly recommended!", rating: 5, tag: "Regular Customer" },
   { name: "Arjun K.", text: "Got the Street Runner X1 and it's amazing. Comfortable, stylish, and affordable.", rating: 5, tag: "Verified Buyer" },
   { name: "Sneha D.", text: "The streetwear collection is insane. Feels like shopping at a premium brand but at local prices!", rating: 4, tag: "New Customer" },
-  { name: "Vikram P.", text: "Fast service, amazing quality. I recommended No.01 Shoes Bolte to all my friends.", rating: 5, tag: "Verified Buyer" },
+  { name: "Vikram P.", text: "Fast service, amazing quality. I recommended Dyna Shoes to all my friends.", rating: 5, tag: "Verified Buyer" },
   { name: "Aisha R.", text: "Love the new arrivals section! Always something fresh and trending. Best shoe store hands down.", rating: 5, tag: "Regular Customer" },
 ];
 

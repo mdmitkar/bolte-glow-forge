@@ -55,7 +55,7 @@ const ParallaxSection = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mx-auto mt-8 max-w-xl text-lg text-muted-foreground"
         >
-          Every pair tells a story. From the streets of Bhiwandi to your wardrobe — premium quality at honest prices.
+          Every pair tells a story. From the streets of Pune to your wardrobe — premium quality at honest prices.
         </motion.p>
       </motion.div>
     </section>

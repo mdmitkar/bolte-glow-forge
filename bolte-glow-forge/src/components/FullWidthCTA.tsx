@@ -45,19 +45,19 @@ const FullWidthCTA = () => {
             Ready to <span className="text-gradient">Upgrade</span> Your Sole Game?
           </h2>
           <p className="mx-auto mt-5 max-w-lg text-base text-muted-foreground">
-            Visit our store or call now to get the freshest kicks at the best prices in Bhiwandi.
+            Visit our store or call now to get the freshest kicks at the best prices in Camp Pune.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <motion.a
-              href="tel:7558764648"
+              href="tel:9607281858"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               className="rounded-full bg-primary px-10 py-4 font-display text-sm font-semibold uppercase tracking-wider text-primary-foreground hover:glow-box"
             >
-              Call Chirag Now
+              Call Now
             </motion.a>
             <motion.a
-              href="https://wa.me/917558764648"
+              href="https://wa.me/919607281858"
               target="_blank"
               rel="noreferrer"
               whileHover={{ scale: 1.03 }}

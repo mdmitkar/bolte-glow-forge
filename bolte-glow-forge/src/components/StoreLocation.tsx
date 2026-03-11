@@ -44,8 +44,8 @@ const StoreLocation = () => {
             className="flex flex-col justify-center gap-7"
           >
             {[
-              { icon: MapPin, title: "Address", content: "Bharat Medical, Thane Road\nNear Ayyub Mithaiwala\nBhiwandi, Dist Thane 421302" },
-              { icon: Phone, title: "Phone", content: "+91 7558764648", link: "tel:7558764648" },
+              { icon: MapPin, title: "Address", content: "Kolsa Street Camp\nPune" },
+              { icon: Phone, title: "Phone", content: "+91 9607281858", link: "tel:9607281858" },
               { icon: Clock, title: "Hours", content: "Mon - Sun: 10:00 AM – 10:00 PM" },
             ].map((item, i) => (
               <motion.div
@@ -73,7 +73,7 @@ const StoreLocation = () => {
             ))}
 
             <div className="flex flex-wrap gap-3 pt-2">
-              <a href="tel:7558764648" className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 font-display text-xs font-semibold uppercase tracking-wider text-primary-foreground transition-all hover:glow-box-subtle hover:scale-105">
+              <a href="tel:9607281858" className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 font-display text-xs font-semibold uppercase tracking-wider text-primary-foreground transition-all hover:glow-box-subtle hover:scale-105">
                 <Phone size={14} /> Call Now
               </a>
               <a href="https://maps.google.com" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-border px-7 py-3.5 font-display text-xs font-semibold uppercase tracking-wider text-foreground transition-all hover:border-primary/50 hover:text-primary">

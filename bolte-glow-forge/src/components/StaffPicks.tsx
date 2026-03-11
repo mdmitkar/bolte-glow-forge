@@ -4,7 +4,7 @@ import sneaker3 from "@/assets/sneaker-3.png";
 import sneaker5 from "@/assets/sneaker-5.png";
 
 const picks = [
-  { name: "Chirag's Pick", subtitle: "The one I wear every day", img: sneaker1, price: "₹1,499" },
+  { name: "Staff Pick", subtitle: "The one we wear every day", img: sneaker1, price: "₹1,499" },
   { name: "Customer Favorite", subtitle: "Most loved by our community", img: sneaker3, price: "₹2,199" },
   { name: "Best Value", subtitle: "Maximum style, minimum price", img: sneaker5, price: "₹999" },
 ];

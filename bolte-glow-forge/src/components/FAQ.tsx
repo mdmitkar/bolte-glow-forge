@@ -3,13 +3,13 @@ import { useState } from "react";
 import { ChevronDown, HelpCircle } from "lucide-react";
 
 const faqs = [
-  { q: "Do you offer home delivery?", a: "Yes! We offer free delivery on orders above ₹999 within Bhiwandi and surrounding areas. For other locations, nominal delivery charges apply." },
+  { q: "Do you offer home delivery?", a: "Yes! We offer free delivery on orders above ₹999 within Pune and surrounding areas. For other locations, nominal delivery charges apply." },
   { q: "Are all products genuine?", a: "Absolutely. We sell 100% genuine products sourced from authorized distributors. Every pair comes with quality assurance." },
   { q: "What is the return policy?", a: "We offer a 7-day hassle-free return policy. If the shoes don't fit or you're not satisfied, just bring them back in original condition." },
   { q: "What payment methods do you accept?", a: "We accept Cash, all UPI apps (GPay, PhonePe, Paytm), Debit/Credit Cards, and Net Banking." },
-  { q: "Can I try shoes before buying?", a: "Of course! Visit our store at Bharat Medical, Thane Road, Bhiwandi. We have all sizes available for trial." },
+  { q: "Can I try shoes before buying?", a: "Of course! Visit our store at Kolsa Street Camp Pune. We have all sizes available for trial." },
   { q: "Do you have kids' shoes?", a: "Yes! We have a growing collection of kids' shoes in all sizes. Visit our store or call us for the latest stock." },
-  { q: "How can I check if my size is available?", a: "Simply call or WhatsApp us at 7558764648 with the shoe name and your size — we'll confirm instantly!" },
+  { q: "How can I check if my size is available?", a: "Simply call or WhatsApp us at 9607281858 with the shoe name and your size — we'll confirm instantly!" },
 ];
 
 const FAQ = () => {

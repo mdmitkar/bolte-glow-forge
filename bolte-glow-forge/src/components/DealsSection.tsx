@@ -89,7 +89,7 @@ const DealsSection = () => {
             </h2>
 
             <p className="mb-8 max-w-md text-base leading-relaxed text-muted-foreground">
-              Don't miss out on our biggest sale of the season. Premium sneakers at unbeatable prices — only at No.01 Shoes Bolte.
+              Don't miss out on our biggest sale of the season. Premium sneakers at unbeatable prices — only at Dyna Shoes.
             </p>
 
             <div className="mb-6 flex items-center gap-2">

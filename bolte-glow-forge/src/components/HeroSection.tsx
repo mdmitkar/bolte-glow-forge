@@ -130,7 +130,7 @@ const HeroSection = () => {
                   transition={{ duration: 0.8, delay: 0.95, ease: "easeOut" }}
                   className="mx-auto mt-6 max-w-lg font-body text-base leading-relaxed text-muted-foreground lg:mx-0 lg:text-lg"
                 >
-                  Premium footwear collection curated by Chirag at No.01 Shoes Bolte.
+                  Premium footwear collection curated by Dyna Shoes.
                   Where street culture meets everyday comfort.
                 </motion.p>
 
@@ -168,7 +168,7 @@ const HeroSection = () => {
                   transition={{ duration: 0.8, delay: 1.7 }}
                   className="mt-10 flex flex-wrap items-center justify-center gap-6 lg:justify-start"
                 >
-                  {["Trusted in Bhiwandi", "100% Genuine Brands", "Free Local Delivery"].map((badge) => (
+                  {["Trusted in Camp Pune", "100% Genuine Brands", "Free Local Delivery"].map((badge) => (
                     <span
                       key={badge}
                       className="flex items-center gap-2 font-body text-[10px] font-bold uppercase tracking-widest text-muted-foreground/60"

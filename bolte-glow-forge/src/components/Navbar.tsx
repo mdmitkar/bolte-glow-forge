@@ -45,17 +45,17 @@ const Navbar = () => {
           <Link to="/" className="flex items-center gap-3 group">
             <motion.img
               src={logo}
-              alt="No.1 Shoes Bolte"
+              alt="Dyna Shoes"
               className="h-14 w-14 object-contain"
               whileHover={{ rotate: 10, scale: 1.1 }}
               transition={{ type: "spring", stiffness: 300 }}
             />
             <div className="flex flex-col">
               <span className="font-display text-base font-bold tracking-wider text-foreground leading-none">
-                NO.1 SHOES
+                DYNA
               </span>
               <span className="font-display text-sm font-bold text-primary tracking-widest mt-0.5">
-                BOLTE
+                SHOES
               </span>
             </div>
           </Link>
@@ -143,7 +143,7 @@ const Navbar = () => {
               )}
             </motion.button>
             <a
-              href="tel:7558764648"
+              href="tel:9607281858"
               className="ml-2 flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 font-display text-[10px] font-bold uppercase tracking-wider text-primary-foreground transition-all hover:glow-box hover:scale-105"
             >
               <Phone size={13} strokeWidth={2.5} /> Call Now
@@ -240,7 +240,7 @@ const Navbar = () => {
                 className="mt-12"
               >
                 <a
-                  href="tel:7558764648"
+                  href="tel:9607281858"
                   className="flex w-full items-center justify-center gap-3 rounded-2xl bg-primary py-5 font-display text-base font-bold uppercase tracking-widest text-primary-foreground shadow-xl shadow-primary/20 hover:scale-[1.02] transition-transform"
                 >
                   <Phone size={20} fill="currentColor" /> Call Support

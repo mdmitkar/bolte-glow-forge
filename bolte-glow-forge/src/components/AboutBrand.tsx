@@ -22,7 +22,7 @@ const AboutBrand = () => {
                 transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
                 className="absolute -inset-10 rounded-full border border-dashed border-primary/10"
               />
-              <img src={logo} alt="No.1 Shoes Bolte" className="relative z-10 w-48 md:w-56" />
+              <img src={logo} alt="Dyna Shoes" className="relative z-10 w-48 md:w-56" />
             </div>
           </motion.div>
 
@@ -38,10 +38,10 @@ const AboutBrand = () => {
               About <span className="text-gradient">The Brand</span>
             </h2>
             <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-              No.01 Shoes Bolte is a footwear destination located in Bhiwandi, offering stylish and comfortable shoes for everyday wear, sports and street fashion.
+              Dyna Shoes is a footwear destination located in Kolsa Street Camp Pune, offering stylish and comfortable shoes for everyday wear, sports and street fashion.
             </p>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              Curated by <span className="font-semibold text-foreground">Chirag</span>, the sneaker savant of Bhiwandi — we're focused on quality, style and affordability, bringing premium sneaker culture to the streets.
+              Curated by the sneaker savant of Pune — we're focused on quality, style and affordability, bringing premium sneaker culture to the streets.
             </p>
 
             <div className="mt-8 grid grid-cols-3 gap-6">

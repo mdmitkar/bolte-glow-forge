@@ -21,7 +21,7 @@ const InstagramGallery = () => {
         >
           <p className="mb-3 font-body text-[11px] uppercase tracking-[0.3em] text-primary">Follow Us</p>
           <h2 className="font-display text-4xl font-bold text-foreground md:text-6xl lg:text-7xl">
-            @No_1_shoes_<span className="text-gradient">bolte</span>
+            @dynashoes.<span className="text-gradient">camp</span>
           </h2>
         </motion.div>
 
@@ -29,7 +29,7 @@ const InstagramGallery = () => {
           {images.map((img, i) => (
             <motion.a
               key={i}
-              href="https://instagram.com/No_1_shoes_bolte"
+              href="https://www.instagram.com/dynashoes.camp/"
               target="_blank"
               rel="noreferrer"
               initial={{ opacity: 0, scale: 0.95 }}
